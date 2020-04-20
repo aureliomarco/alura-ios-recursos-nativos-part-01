@@ -5,12 +5,13 @@ Este é meu código durante o curso de iOS.
 ## Aula 01: Acessando a câmera do iPhone/iPad Ver primeiro vídeo
 - [Introdução](https://github.com/aureliomarco/alura-ios-recursos-nativos-part-01/commit/386d6cafc027fe96190f8bc9271a0c1f2604d27e) - commit [fb4e01d7713bce9b24b6e8f7fba015a809e4599a]
 - [Utilizando a câmera](https://github.com/aureliomarco/alura-ios-recursos-nativos-part-01/commit/386d6cafc027fe96190f8bc9271a0c1f2604d27e) - commit [386d6cafc027fe96190f8bc9271a0c1f2604d27e]
-
 <p align="left">
   <img width="250" height="444" src="gif/camera.gif">
 </p>
-
-- Utilizando a biblioteca de fotos
+- [Utilizando a biblioteca de fotos](https://github.com/aureliomarco/alura-ios-recursos-nativos-part-01/commit/fe96bc94b0a2d3a2e8e14e25166e80aa378af591) - commit [fe96bc94b0a2d3a2e8e14e25166e80aa378af591]
+<p align="left">
+  <img width="223" height="444" src="gif/biblioteca.gif">
+</p>
 
 ## Aula 02: Persistindo dados com Core Data
 - Começando com o Core Data
