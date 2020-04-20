@@ -26,7 +26,11 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate {
     func configuraSearch() {
         self.searchController.searchBar.delegate = self
         self.searchController.dimsBackgroundDuringPresentation = false
-        self.navigationItem.searchController = searchController
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = searchController
+        } else {
+            self.navigationItem.titleView = searchController.searchBar
+        }
     }
 
     // MARK: - Table view data source
