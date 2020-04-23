@@ -89,8 +89,6 @@ class AlunoViewController: UIViewController, ImagePickerFotoSelecionada {
             self.mostrarMultimidia(opcao)
         }
         present(menu, animated: true, completion: nil)
-        
-
     }
     
     @IBAction func stepperNota(_ sender: UIStepper) {
