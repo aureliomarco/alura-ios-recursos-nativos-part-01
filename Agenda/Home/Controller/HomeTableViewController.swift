@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class HomeTableViewController: UITableViewController, UISearchBarDelegate {
+class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFetchedResultsControllerDelegate {
     
     //MARK: - Variáveis
     var contexto: NSManagedObjectContext {
@@ -47,6 +47,7 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate {
         pesquisaAluno.sortDescriptors = [ordenaPorNome]
 
         gerenciadorDeResultados = NSFetchedResultsController(fetchRequest: pesquisaAluno, managedObjectContext: contexto, sectionNameKeyPath: nil, cacheName: nil)
+        gerenciadorDeResultados?.delegate = self
 
         do {
             try gerenciadorDeResultados?.performFetch()
@@ -65,13 +66,8 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celula-aluno", for: indexPath) as! HomeTableViewCell
         guard let aluno = gerenciadorDeResultados?.fetchedObjects?[indexPath.row] else { return cell }
-        
-        cell.labelNomeDoAluno.text = aluno.nome
+        cell.configuraCelula(aluno)
 
-        if let imagemDoAluno = aluno.foto as? UIImage {
-            cell.imageAluno.image = imagemDoAluno
-        }
-        
         return cell
     }
     
@@ -88,4 +84,15 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate {
         }    
     }
 
+    // MARK: - Fetched Results Controller Delegate
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .delete:
+            // implementar
+            break
+        default:
+            tableView.reloadData()
+        }
+    }
+    
 }
