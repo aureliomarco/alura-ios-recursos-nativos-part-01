@@ -16,7 +16,7 @@ Este é meu código durante o curso de iOS.
 
 ## Aula 02: Persistindo dados com Core Data
 - [Começando com o Core Data, Salvando alunos no device](https://github.com/aureliomarco/alura-ios-recursos-nativos-part-01/commit/f300a62bc0cecd4e00aba9f8246a02ddf185afd6) - commit [f300a62bc0cecd4e00aba9f8246a02ddf185afd6]
-- Listando os alunos
+- [Listando os alunos](https://github.com/aureliomarco/alura-ios-recursos-nativos-part-01/commit/416d10cb086d5480d12fc3cdfad49f0492c13c78) - commit [416d10cb086d5480d12fc3cdfad49f0492c13c78]
 - Ajuste na listagem dos alunos
 - Editando informações dos alunos
 - Deletando aluno
