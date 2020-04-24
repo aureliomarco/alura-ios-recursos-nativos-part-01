@@ -21,7 +21,7 @@ Este é meu código durante o curso de iOS.
 - [Listando os alunos](https://github.com/aureliomarco/alura-ios-recursos-nativos-part-01/commit/416d10cb086d5480d12fc3cdfad49f0492c13c78) - commit [416d10cb086d5480d12fc3cdfad49f0492c13c78]
 - [Ajuste na listagem dos alunos](https://github.com/aureliomarco/alura-ios-recursos-nativos-part-01/commit/3b4cd80f5fc12356f96315557fe95d168ff17c11) - commit [3b4cd80f5fc12356f96315557fe95d168ff17c11]
 - [Editando informações dos alunos](https://github.com/aureliomarco/alura-ios-recursos-nativos-part-01/commit/1f8e25fba803d361c53ebd70ea58c9bdfc0b82a2) - commit [1f8e25fba803d361c53ebd70ea58c9bdfc0b82a2]
-- Deletando aluno
+- [Deletando aluno](https://github.com/aureliomarco/alura-ios-recursos-nativos-part-01/commit/c03cce3d0e6b2f2aafedda7bd6a8e8dddff85428) - commit [c03cce3d0e6b2f2aafedda7bd6a8e8dddff85428]
 
 ## Aula 03: Trabalhando com recursos nativos
 - Criando o menu opções
