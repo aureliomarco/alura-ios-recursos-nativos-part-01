@@ -52,29 +52,46 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
         // key: "nome" é o atribuito do model que se deseja realizar a ordenação
         let ordenaPorNome = NSSortDescriptor(key: "nome", ascending: true)
         pesquisaAluno.sortDescriptors = [ordenaPorNome]
-
+        
         gerenciadorDeResultados = NSFetchedResultsController(fetchRequest: pesquisaAluno, managedObjectContext: contexto, sectionNameKeyPath: nil, cacheName: nil)
         gerenciadorDeResultados?.delegate = self
-
+        
         do {
             try gerenciadorDeResultados?.performFetch()
         } catch {
             print(error.localizedDescription)
         }
     }
-
+    
+    @objc func abrirActionSheet(_ longPress: UILongPressGestureRecognizer) {
+        if longPress.state == .began {
+            let menu = MenuOpcoesAlunos().configuraMenuDeOpcoesDoAluno { (opcao) in
+                switch opcao {
+                case .sms:
+                    print("SMS")
+                }
+            }
+            
+            self.present(menu, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let contadorListaDeAlunos = gerenciadorDeResultados?.fetchedObjects?.count else { return 0 }
         return contadorListaDeAlunos
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celula-aluno", for: indexPath) as! HomeTableViewCell
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(abrirActionSheet(_:)))
+        
         guard let aluno = gerenciadorDeResultados?.fetchedObjects?[indexPath.row] else { return cell }
         cell.configuraCelula(aluno)
-
+        cell.addGestureRecognizer(longPress)
+        
         return cell
     }
     
@@ -101,7 +118,7 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
         guard let alunoSelecionado = gerenciadorDeResultados?.fetchedObjects?[indexPath.row] else { return }
         alunoViewController?.aluno = alunoSelecionado
     }
-
+    
     // MARK: - Fetched Results Controller Delegate
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
