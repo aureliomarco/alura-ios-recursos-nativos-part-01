@@ -27,7 +27,11 @@ Este é meu código durante o curso de iOS.
 </p>
 
 ## Aula 03: Trabalhando com recursos nativos
-- Criando o menu opções
+- [Criando o menu opções](https://github.com/aureliomarco/alura-ios-recursos-nativos-part-01/commit/1ce76be139a61ce06673a03edcd591179a905597) -- commit [1ce76be139a61ce06673a03edcd591179a905597]
+<p align="left">
+  <img width="223" height="444" src="gif/creation_of_menu.gif">
+</p>
+
 - Componente de mensagem do iOS
 - Ligação telefônica
 
